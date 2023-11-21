@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             if(s.equals("found")){
                 Intent intent = new Intent(MainActivity.this,FragmentMain.class);
+                intent.putExtra("user_id_value",edit_user.getText().toString());
                 startActivity(intent);
             }else if(s.equals("not found")){
                 Toast.makeText(MainActivity.this, "Invalid Credentials", Toast.LENGTH_LONG).show();
